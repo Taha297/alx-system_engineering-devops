@@ -1,2 +1,0 @@
-description script
-readme script
