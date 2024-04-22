@@ -54,8 +54,6 @@ echo "configured - Roundrobin On web-01 & web-02"
 
 if ! pgrep haproxy > /dev/null; then
     sudo service haproxy start
-fi
-
-if pgrep haproxy > /dev/null; then
+else
     sudo service haproxy restart
 fi
