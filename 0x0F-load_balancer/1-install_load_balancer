@@ -17,8 +17,8 @@ frontend  topo7_frontend
         default_backend topo7_backend
 backend topo7_backend
         balance roundrobin
-        server 529215-web-01 100.25.140.50 check
-        server 529215-web-02 35.168.1.104 check
+        server 529215-web-01 100.25.140.50:80 check
+        server 529215-web-02 35.168.1.104:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
