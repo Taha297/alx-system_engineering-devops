@@ -47,5 +47,5 @@ frontend topo7-frontend-https
 
 backend topo7-backend
         balance roundrobin
-        server 529215-web-01 100.25.140.50 check
-        server 529215-web-02 35.168.1.104 check
+        server 529215-web-01 100.25.140.50:80 check
+        server 529215-web-02 35.168.1.104:80 check
