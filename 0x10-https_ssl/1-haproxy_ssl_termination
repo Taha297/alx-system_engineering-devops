@@ -33,19 +33,19 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend clickviral-frontend
+frontend topo7-frontend
         bind *:80
         mode http
         http-request redirect scheme https code 301 unless { ssl_fc }
         http-request set-header X_Forwarded-Proto http
-        default_backend clickviral-backend
+        default_backend topo7-backend
 
-frontend clickviral-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/clickviral.tech.pem
+frontend topo7-frontend-https
+        bind *:443 ssl crt /etc/haproxy/certs/www.topo7.tech.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend clickviral-backend
+        default_backend topo7-backend
 
-backend clickviral-backend
+backend topo7-backend
         balance roundrobin
         server 529215-web-01 100.25.140.50 check
         server 529215-web-02 35.168.1.104 check
